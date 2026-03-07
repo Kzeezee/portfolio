@@ -3,5 +3,5 @@
 </script>
 
 <main class="flex min-h-screen w-full items-center justify-center p-6">
-	<TerminalIntro selectedFileId={null} selectedContent={null} />
+	<TerminalIntro selectedFileId={null} />
 </main>

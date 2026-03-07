@@ -6,13 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>{data.selectedContent.title} | Oliver Goh</title>
-	<meta name="description" content={data.selectedContent.description} />
+	<title>{data.title} | Oliver Goh</title>
+	<meta name="description" content={data.description} />
 </svelte:head>
 
 <main class="flex min-h-screen w-full items-center justify-center p-6">
-	<TerminalIntro
-		selectedFileId={data.selectedFileId}
-		selectedContent={data.selectedContent}
-	/>
+	<TerminalIntro selectedFileId={data.selectedFileId} />
 </main>
