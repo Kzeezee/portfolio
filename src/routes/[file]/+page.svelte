@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TerminalIntro from '$lib/components/ui/TerminalIntro.svelte';
+	import TerminalIntro from '$lib/components/ui/Landing.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

@@ -17,7 +17,6 @@
 		fileName: string;
 		icon: NonNullable<FileNode['icon']>;
 		title: string;
-		description: string;
 		updatedAt: string;
 		component: Component;
 	}
@@ -28,8 +27,6 @@
 			fileName: 'about.md',
 			icon: 'text',
 			title: 'About Me',
-			description:
-				'A short intro focused on product-minded engineering and building polished UI systems.',
 			updatedAt: 'March 7, 2026',
 			component: AboutContent
 		},
@@ -38,8 +35,6 @@
 			fileName: 'experience.json',
 			icon: 'json',
 			title: 'Experience',
-			description:
-				'Recent roles and outcomes with emphasis on measurable product and platform improvements.',
 			updatedAt: 'March 7, 2026',
 			component: ExperienceContent
 		},
@@ -48,8 +43,6 @@
 			fileName: 'projects.tsx',
 			icon: 'code',
 			title: 'Projects',
-			description:
-				'Selected builds across product interfaces, tooling, and frontend performance work.',
 			updatedAt: 'March 7, 2026',
 			component: ProjectsContent
 		},
@@ -58,7 +51,6 @@
 			fileName: 'contact.txt',
 			icon: 'mail',
 			title: 'Contact',
-			description: 'Ways to collaborate, availability notes, and preferred channels.',
 			updatedAt: 'March 7, 2026',
 			component: ContactContent
 		}
@@ -220,43 +212,39 @@
 		</div>
 	</div>
 
-	<div class="content-panel h-96">
-		{#if hasSelection && activeContent}
-			{#key activeContent.id}
-				<article
-					class="rounded-xl border border-border/80 bg-card/60 p-5 shadow-lg backdrop-blur-sm"
-					in:fly={{
-						y: animateRouteContent ? 24 : 0,
-						duration: animateRouteContent ? 520 : 0,
-						easing: quintOut
-					}}
-				>
-					<p class="font-mono text-xs tracking-wider text-muted-foreground">
-						{activeContent.fileName} · updated {activeContent.updatedAt}
-					</p>
-					<h2 class="mt-2 font-sans text-2xl font-semibold text-foreground">
-						{activeContent.title}
-					</h2>
-					<p class="mt-2 text-sm leading-6 text-muted-foreground">{activeContent.description}</p>
+	{#if hasSelection}
+		<div class="content-panel">
+			{#if activeContent}
+				{#key activeContent.id}
+					<article
+						class="relative flex max-h-[75vh] flex-col rounded-xl border border-border/80 bg-card/60 p-5 shadow-lg backdrop-blur-sm"
+						in:fly={{
+							y: animateRouteContent ? 24 : 0,
+							duration: animateRouteContent ? 520 : 0,
+							easing: quintOut
+						}}
+					>
+						<p class="font-mono text-xs tracking-wider text-muted-foreground">
+							{activeContent.fileName} · updated {activeContent.updatedAt}
+						</p>
+						<h2 class="mt-2 font-sans text-2xl font-semibold text-foreground">
+							{activeContent.title}
+						</h2>
 
-					<div class="mt-6 space-y-6">
-						{#if ActiveContentComponent}
-							<ActiveContentComponent />
-						{/if}
-					</div>
-				</article>
-			{/key}
-		{:else}
-			<div
-				class="placeholder-panel rounded-xl border border-dashed border-border/90 bg-muted/40 p-5"
-				in:fly={{ y: 18, duration: 420, easing: quintOut }}
-			>
-				<p class="font-mono text-xs tracking-wider text-muted-foreground">
-					Select a file from the tree to open a route-backed content page.
-				</p>
-			</div>
-		{/if}
-	</div>
+						<div class="styled-scrollbar relative z-10 mt-4 min-h-0 overflow-y-auto pr-2 pb-4">
+							{#if ActiveContentComponent}
+								<ActiveContentComponent />
+							{/if}
+						</div>
+						<!-- Bottom Fade Effect overlay -->
+						<!-- <div
+							class="pointer-events-none absolute right-7 bottom-5 left-5 z-20 h-12 bg-gradient-to-t from-background/90 to-transparent"
+						></div> -->
+					</article>
+				{/key}
+			{/if}
+		</div>
+	{/if}
 </section>
 
 <style>
@@ -266,7 +254,7 @@
 		display: grid;
 		gap: 1rem;
 		grid-template-columns: minmax(0, 1fr);
-		align-items: start;
+		align-items: center;
 	}
 
 	.intro-panel {

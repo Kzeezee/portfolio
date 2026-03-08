@@ -1,24 +1,19 @@
 <section>
-	<h3 class="font-mono text-xs font-semibold tracking-wider text-primary">Who I Am</h3>
+	<h3 class="flex items-center gap-2 font-mono text-sm font-semibold tracking-wider text-primary">
+		<span class="block h-px w-8 bg-primary/50"></span>
+		Who I Am
+	</h3>
 	<p class="mt-2 text-sm leading-6 text-foreground/90">
-		I design and ship web products with a focus on smooth interactions, clear architecture, and
-		maintainable code.
+		Computer Science student @ SMU with a focus on software engineering and AI architecture. I'm a
+		strong believer in being adaptable, continuously growing, and embracing self-discovery in both
+		work and life.
 	</p>
 	<p class="mt-2 text-sm leading-6 text-foreground/90">
-		I care about the details that users notice: fast loading, clear content structure, and clean
-		visual rhythm.
+		I'm obsessed with the little things when building software - does this feel good to use? Is the
+		architecture clean? My benchmark: "Would I use this without hesitation?" If the answer's yes,
+		that's good software.
 	</p>
-</section>
-
-<section>
-	<h3 class="font-mono text-xs font-semibold tracking-wider text-primary">Current Focus</h3>
 	<p class="mt-2 text-sm leading-6 text-foreground/90">
-		I am currently refining this portfolio to blend terminal aesthetics with modern responsive
-		layouts.
+		Off the clock, I'm deep into tech rabbit holes, gaming, or hunting for good food.
 	</p>
-	<ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-foreground/85">
-		<li>SvelteKit-based component architecture</li>
-		<li>Animation systems with practical motion constraints</li>
-		<li>SEO-aware content routing</li>
-	</ul>
 </section>
