@@ -17,6 +17,7 @@
 		"@eslint/compat": "^2.0.2",
 		"@eslint/js": "^9.39.2",
 		"@lucide/svelte": "^0.577.0",
+		"@rollup/plugin-yaml": "^4.1.2",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.50.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
