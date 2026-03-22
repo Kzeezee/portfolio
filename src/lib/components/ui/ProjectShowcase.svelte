@@ -16,9 +16,6 @@
 	let mousePosition = $state({ x: 0, y: 0 });
 	let smoothPosition = $state({ x: 0, y: 0 });
 	let isVisible = $state(false);
-	let containerEl = $state<HTMLElement | null>(null);
-	let containerLeft = $state(0);
-	let containerTop = $state(0);
 	let animationId: number | null = null;
 
 	function lerp(start: number, end: number, factor: number) {
@@ -40,16 +37,17 @@
 		};
 	});
 
+	function portal(node: HTMLElement) {
+		document.body.appendChild(node);
+		return {
+			destroy() {
+				node.remove();
+			}
+		};
+	}
+
 	function handleMouseMove(e: MouseEvent) {
-		if (containerEl) {
-			const rect = containerEl.getBoundingClientRect();
-			containerLeft = rect.left;
-			containerTop = rect.top;
-			mousePosition = {
-				x: e.clientX - rect.left,
-				y: e.clientY - rect.top
-			};
-		}
+		mousePosition = { x: e.clientX, y: e.clientY };
 	}
 
 	function handleMouseEnter(index: number) {
@@ -63,40 +61,40 @@
 	}
 </script>
 
-<section
-	bind:this={containerEl}
-	onmousemove={handleMouseMove}
-	class="relative w-full"
+<!-- Floating image preview — portalled to body so nothing clips it -->
+<div
+	use:portal
+	class="pointer-events-none fixed z-[9999] overflow-hidden rounded-xl shadow-2xl"
+	style="
+    left: 0;
+    top: 0;
+    transform: translate3d({smoothPosition.x + 20}px, {smoothPosition.y - 100}px, 0);
+    opacity: {isVisible ? 1 : 0};
+    scale: {isVisible ? 1 : 0.8};
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  "
 >
-	<!-- Floating image preview -->
-	<div
-		class="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl"
-		style="
-      left: {containerLeft}px;
-      top: {containerTop}px;
-      transform: translate3d({smoothPosition.x + 20}px, {smoothPosition.y - 100}px, 0);
-      opacity: {isVisible ? 1 : 0};
-      scale: {isVisible ? 1 : 0.8};
-      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    "
-	>
-		<div class="bg-secondary relative h-[180px] w-[280px] overflow-hidden rounded-xl">
-			{#each projects as project, index}
-				<img
-					src={project.image}
-					alt={project.title}
-					class="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out"
-					style="
-            opacity: {hoveredIndex === index ? 1 : 0};
-            scale: {hoveredIndex === index ? 1 : 1.1};
-            filter: {hoveredIndex === index ? 'none' : 'blur(10px)'};
-          "
-				/>
-			{/each}
-			<div class="from-background/20 absolute inset-0 bg-gradient-to-t to-transparent"></div>
-		</div>
+	<div class="bg-secondary relative h-[180px] w-[280px] overflow-hidden rounded-xl">
+		{#each projects as project, index}
+			<img
+				src={project.image}
+				alt={project.title}
+				class="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out"
+				style="
+          opacity: {hoveredIndex === index ? 1 : 0};
+          scale: {hoveredIndex === index ? 1 : 1.1};
+          filter: {hoveredIndex === index ? 'none' : 'blur(10px)'};
+        "
+			/>
+		{/each}
+		<div class="from-background/20 absolute inset-0 bg-gradient-to-t to-transparent"></div>
 	</div>
+</div>
 
+<div
+	onmousemove={handleMouseMove}
+	class="w-full"
+>
 	<!-- Project list -->
 	<div class="space-y-0">
 		{#each projects as project, index}
@@ -170,4 +168,4 @@
 
 		<div class="border-border border-t"></div>
 	</div>
-</section>
+</div>

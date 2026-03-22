@@ -4,7 +4,7 @@
 
 <section class="flex w-full flex-col gap-6">
 	<!-- Header -->
-	<header>
+	<header class="top-0 z-10 pb-2">
 		<h3 class="flex items-center gap-2 font-mono text-sm font-semibold tracking-wider text-primary">
 			<span class="block h-px w-8 bg-primary/50"></span>
 			Projects
