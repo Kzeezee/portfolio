@@ -10,6 +10,7 @@
 	import FileTree from '$lib/components/ui/FileTree.svelte';
 	import type { FileNode } from '$lib/types/file-tree.types';
 	import lastUpdated from '$lib/content/last_updated.yaml';
+	import { terminalState } from '$lib/stores/terminal.svelte';
 
 	type TerminalFileId = 'about' | 'experience' | 'projects' | 'contact';
 
@@ -82,9 +83,6 @@
 
 	let { selectedFileId = null }: Props = $props();
 	let command = $state('');
-	let hasHiddenInput = $state(false);
-	let hasExpandedTerminalBody = $state(false);
-	let hasRevealedTree = $state(false);
 	let revealTreeTimeout: ReturnType<typeof setTimeout> | null = null;
 	const INPUT_HIDE_DURATION_MS = 520;
 	const animatedRouteIds = ['about', 'experience', 'projects', 'contact'] as const;
@@ -106,35 +104,35 @@
 
 	$effect(() => {
 		if (selectedFileId) {
-			hasHiddenInput = true;
-			hasExpandedTerminalBody = true;
-			hasRevealedTree = true;
+			terminalState.hasHiddenInput = true;
+			terminalState.hasExpandedTerminalBody = true;
+			terminalState.hasRevealedTree = true;
 		}
 	});
 
 	function handleCommandInput() {
-		if (!hasHiddenInput && command.trim().toLowerCase() === 'ls') {
-			hasHiddenInput = true;
+		if (!terminalState.hasHiddenInput && command.trim().toLowerCase() === 'ls') {
+			terminalState.hasHiddenInput = true;
 			if (revealTreeTimeout) {
 				clearTimeout(revealTreeTimeout);
 			}
 			revealTreeTimeout = setTimeout(() => {
-				hasExpandedTerminalBody = true;
-				hasRevealedTree = true;
+				terminalState.hasExpandedTerminalBody = true;
+				terminalState.hasRevealedTree = true;
 				revealTreeTimeout = null;
 			}, INPUT_HIDE_DURATION_MS);
 		}
 	}
 
 	function handleInputTransitionEnd(event: TransitionEvent) {
-		if (!hasHiddenInput || event.propertyName !== 'max-height') {
+		if (!terminalState.hasHiddenInput || event.propertyName !== 'max-height') {
 			return;
 		}
 		if (revealTreeTimeout) {
 			clearTimeout(revealTreeTimeout);
 		}
-		hasExpandedTerminalBody = true;
-		hasRevealedTree = true;
+		terminalState.hasExpandedTerminalBody = true;
+		terminalState.hasRevealedTree = true;
 		revealTreeTimeout = null;
 	}
 
@@ -164,13 +162,13 @@
 
 		<div
 			class="terminal-shell mt-6 w-full rounded-xl border border-border/80 bg-card/60 p-5 shadow-lg backdrop-blur-sm"
-			class:expanded={hasExpandedTerminalBody}
+			class:expanded={terminalState.hasExpandedTerminalBody}
 		>
 			<div class="terminal-body">
 				{#if !hasSelection}
 					<div
 						class="input-panel"
-						class:hidden={hasHiddenInput}
+						class:hidden={terminalState.hasHiddenInput}
 						ontransitionend={handleInputTransitionEnd}
 					>
 						<span class="shrink-0 text-muted-foreground">
@@ -198,7 +196,7 @@
 					</div>
 				{/if}
 
-				<div class="tree-panel" class:active={hasRevealedTree}>
+				<div class="tree-panel" class:active={terminalState.hasRevealedTree}>
 					<div class="pt-1">
 						<FileTree
 							nodes={FILE_TREE_ROOT}
