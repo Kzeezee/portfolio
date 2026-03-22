@@ -1,0 +1,14 @@
+- label: Email
+  href: "mailto:gxy.oliver@gmail.com"
+  handle: gxy.oliver@gmail.com
+  icon: mail
+
+- label: GitHub
+  href: "https://github.com/Kzeezee"
+  handle: github.com/Kzeezee
+  icon: github
+
+- label: LinkedIn
+  href: "https://www.linkedin.com/in/kzeezee-dev/"
+  handle: linkedin.com/in/kzeezee-dev
+  icon: linkedin
