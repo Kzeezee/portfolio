@@ -1,0 +1,26 @@
+bio:
+  - "Computer Science student @ SMU with a focus on software engineering and AI architecture. I'm a strong believer in being adaptable, continuously growing, and embracing self-discovery in both work and life."
+  - "I'm obsessed with the little things when building software - does this feel good to use? Is the architecture clean? My benchmark: \"Would I use this without hesitation?\". If the answer's yes, that's good software."
+  - "Off the clock, I'm deep into tech rabbit holes, gaming, or hunting for good food."
+
+skills:
+  - category: 'Languages'
+    items: ['TypeScript', 'Python', 'Java', 'SQL', 'Rust']
+  - category: 'Frontend'
+    items: ['Svelte', 'React', 'Next.js', 'TailwindCSS']
+  - category: 'Backend & Infra'
+    items: ['Node.js', 'Spring Boot', 'PostgreSQL', 'Firebase', 'Azure']
+  - category: 'AI / ML'
+    items: ['LLM Routing', 'Diffusion Models', 'ETL Pipelines']
+
+interests:
+  - label: 'Tech rabbit holes'
+    icon: 'terminal'
+  - label: 'Gaming'
+    icon: 'gamepad'
+  - label: 'Food hunting'
+    icon: 'fork'
+  - label: 'Software architecture'
+    icon: 'blueprint'
+  - label: 'Open source'
+    icon: 'git'

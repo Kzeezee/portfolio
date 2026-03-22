@@ -13,3 +13,20 @@ declare module '$lib/content/experience.yaml' {
 	}>;
 	export default value;
 }
+
+declare module '$lib/content/about.yaml' {
+	interface SkillCategory {
+		category: string;
+		items: string[];
+	}
+	interface Interest {
+		label: string;
+		icon: string;
+	}
+	const value: {
+		bio: string[];
+		skills: SkillCategory[];
+		interests: Interest[];
+	};
+	export default value;
+}
