@@ -9,6 +9,7 @@
 	import ProjectsContent from '$lib/components/content/ProjectsContent.svelte';
 	import FileTree from '$lib/components/ui/FileTree.svelte';
 	import type { FileNode } from '$lib/types/file-tree.types';
+	import lastUpdated from '$lib/content/last_updated.yaml';
 
 	type TerminalFileId = 'about' | 'experience' | 'projects' | 'contact';
 
@@ -27,7 +28,7 @@
 			fileName: 'about.md',
 			icon: 'text',
 			title: 'About Me',
-			updatedAt: 'March 7, 2026',
+			updatedAt: lastUpdated.about,
 			component: AboutContent
 		},
 		experience: {
@@ -35,7 +36,7 @@
 			fileName: 'experience.json',
 			icon: 'json',
 			title: 'Experience',
-			updatedAt: 'March 7, 2026',
+			updatedAt: lastUpdated.experience,
 			component: ExperienceContent
 		},
 		projects: {
@@ -43,7 +44,7 @@
 			fileName: 'projects.tsx',
 			icon: 'code',
 			title: 'Projects',
-			updatedAt: 'March 7, 2026',
+			updatedAt: lastUpdated.projects,
 			component: ProjectsContent
 		},
 		contact: {
@@ -51,7 +52,7 @@
 			fileName: 'contact.txt',
 			icon: 'mail',
 			title: 'Contact',
-			updatedAt: 'March 7, 2026',
+			updatedAt: lastUpdated.contact,
 			component: ContactContent
 		}
 	};

@@ -2,41 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import BadgeAnimatedBorder from '../ui/BadgeAnimatedBorder.svelte';
-
-	type Experience = {
-		role: string;
-		company: string;
-		period: string;
-		description: string;
-		tech: string[];
-	};
-
-	const experiences: Experience[] = [
-		{
-			role: 'AI Software Engineer',
-			company: 'MikoMiko.ai',
-			period: 'Dec 2025 - Present',
-			description:
-				'Architecting a GenAI SaaS platform for real-time image generation and community interaction using Next.js and diffusion models.',
-			tech: ['Next.js', 'Firebase', 'Python', 'Diffusion Models', 'ETL']
-		},
-		{
-			role: 'Technology & GDG Director',
-			company: 'Singapore Management University',
-			period: 'Sep 2025 - Present',
-			description:
-				'Leading technical workshops and developing internal software tools to grow the campus developer community.',
-			tech: ['Leadership', 'Community Building', 'Public Speaking', 'Software Architecture']
-		},
-		{
-			role: 'Full Stack Developer',
-			company: 'mathilda',
-			period: 'Mar 2021 - Aug 2021',
-			description:
-				'Engineered backend REST APIs and integrated ML-based candidate recommendation systems for an HR management platform.',
-			tech: ['Spring Boot', 'Angular', 'PostgreSQL', 'Azure ML', 'RESTful APIs']
-		}
-	];
+	import experiences from '$lib/content/experience.yaml';
 </script>
 
 <section class="max-w-2xl">

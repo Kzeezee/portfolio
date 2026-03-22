@@ -40,6 +40,15 @@ The central interface is a **terminal-style file browser** (`Landing.svelte`):
 - `src/lib/components/content/` — Page content: `AboutContent`, `ExperienceContent`, `ProjectsContent`, `ContactContent`
 - `src/lib/stores/theme.svelte.ts` — Theme store (Svelte 5 runes, localStorage-persisted)
 - `src/lib/types/file-tree.types.ts` — `FileNode` interface
+- `src/lib/types/yaml.d.ts` — TypeScript declarations for YAML module imports
+
+### Static Content
+
+YAML files in `src/lib/content/` are imported directly via `@rollup/plugin-yaml` (configured in `vite.config.ts`). Edit these to update content without touching components.
+
+- `src/lib/content/last_updated.yaml` — per-section `updatedAt` dates shown in the file tree metadata; keys match `TerminalFileId` (`about`, `experience`, `projects`, `contact`)
+- `src/lib/content/experience.yaml` — list of work experience entries rendered by `ExperienceContent.svelte`
+- `src/lib/content/projects.yaml` — list of projects rendered by `ProjectsContent.svelte`
 
 ### Styling
 
@@ -66,3 +75,4 @@ The central interface is a **terminal-style file browser** (`Landing.svelte`):
 2. Add metadata to `FILE_PAGES` in `src/routes/[file]/+page.ts`
 3. Create a content component in `src/lib/components/content/`
 4. Add the component to `TERMINAL_PAGES` map in `Landing.svelte`
+5. Add an `updatedAt` entry for the new key in `src/lib/content/last_updated.yaml`
