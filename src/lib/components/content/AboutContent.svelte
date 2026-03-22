@@ -11,10 +11,12 @@
 		in:fly={{ x: -12, y: 6, duration: 420, delay: 0, easing: quintOut }}
 		class="flex items-center gap-4 rounded-lg border border-border bg-card/40 p-4"
 	>
-		<div
-			class="avatar-geo relative flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-border/60"
-		>
-			<span class="z-10 font-mono text-xs font-bold text-foreground/60">dev</span>
+		<div class="relative h-16 w-16 shrink-0">
+			<img
+				src="/images/profile.webp"
+				alt="Profile avatar"
+				class="h-full w-full rounded-xl border border-border/60 object-cover"
+			/>
 		</div>
 
 		<div class="min-w-0 flex-1 space-y-1.5">
@@ -79,16 +81,3 @@
 
 	
 </section>
-
-<style>
-	.avatar-geo {
-		background: conic-gradient(
-			from 135deg,
-			var(--primary) 0deg 90deg,
-			transparent 90deg 180deg,
-			var(--primary) 180deg 270deg,
-			transparent 270deg 360deg
-		);
-		opacity: 0.9;
-	}
-</style>

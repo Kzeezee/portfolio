@@ -5,13 +5,13 @@ bio:
 
 skills:
   - category: 'Languages'
-    items: ['TypeScript', 'Python', 'Java', 'SQL', 'Rust']
+    items: ['TypeScript', 'Python', 'Java', 'Rust', 'C/C++', 'SQL']
   - category: 'Frontend'
-    items: ['Svelte', 'React', 'Next.js', 'TailwindCSS']
-  - category: 'Backend & Infra'
-    items: ['Node.js', 'Spring Boot', 'PostgreSQL', 'Firebase', 'Azure']
-  - category: 'AI / ML'
-    items: ['LLM Routing', 'Diffusion Models', 'ETL Pipelines']
+    items: ['React', 'Next.js', 'Svelte', 'TailwindCSS', 'Shadcn']
+  - category: 'Backend'
+    items: ['Node.js', 'Express', 'Spring Boot', 'PostgreSQL', 'Firebase']
+  - category: 'Infrastructure'
+    items: ['AWS', 'Docker', 'Linux', 'Git']
 
 interests:
   - label: 'Tech rabbit holes'

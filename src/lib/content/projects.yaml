@@ -1,35 +1,35 @@
 - title: Servo
   year: "2026"
-  description: LLM routing & cost optimization platform that classifies prompts by complexity and routes them to the cheapest appropriate model tier, targeting up to 80% inference cost savings.
+  description: LLM routing & cost optimization platform, with a Python SDK that classifies prompts by complexity and routes them to the cheapest appropriate model tier, targeting up to 80% inference cost savings.
   link: https://github.com/itsnotkx/Servo
-  image: /images/projects/placeholder.svg
+  image: /images/projects/servo.webp
 
 - title: GooseDB
   year: "2026"
   description: Single-threaded Rust query processor specialised for TPC-H Q19, outperforming DuckDB via aggressive predicate pushdown and Parquet dictionary encoding preservation.
   link: https://github.com/Kzeezee/goose-db
-  image: /images/projects/placeholder.svg
+  image: /images/projects/goosedb.webp
 
 - title: TARIFF
   year: "2025"
   description: International tariff navigation app built in collaboration with UBS Bank - simulate tariff costs, find optimal trade routes, and get real-time global tariff updates.
   link: https://github.com/TheMajoris/TARIFF
-  image: /images/projects/placeholder.svg
+  image: /images/projects/tariff.webp
 
 - title: Pomodoko
   year: "2025"
   description: Cross-platform Pomodoro timer with an integrated task system, persistent SQLite storage, and native notifications, built with Tauri and Svelte.
   link: https://github.com/Kzeezee/Pomodoko
-  image: /images/projects/placeholder.svg
+  image: /images/projects/pomodoko.webp
 
 - title: MyCelsius
   year: "2022"
   description: JavaFX + Firebase application automating staff temperature submission and verification for organisations during the COVID-19 pandemic, with a Telegram Bot integration.
   link: https://github.com/Kzeezee/MyCelsius
-  image: /images/projects/placeholder.svg
+  image: /images/projects/mycelsius.webp
 
 - title: Ambrosia
   year: "2021"
   description: Android calorie tracker with QR code scanning for quick food logging. Supports vendor accounts so restaurants can register nutritional data scannable by users.
   link: https://github.com/Kzeezee/AmbrosiaApp
-  image: /images/projects/placeholder.svg
+  image: /images/projects/ambrosia.webp
