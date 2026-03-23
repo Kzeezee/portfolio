@@ -92,6 +92,8 @@
 </div>
 
 <div
+	role="region"
+	aria-label="Projects"
 	onmousemove={handleMouseMove}
 	class="w-full"
 >

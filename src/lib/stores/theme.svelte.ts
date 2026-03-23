@@ -16,7 +16,8 @@ function createThemeStore() {
 		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 	}
 
-	let theme = $state<Theme>(getInitial());
+	const initial = getInitial();
+	let theme = $state<Theme>(initial);
 
 	function apply(value: Theme) {
 		if (typeof document === 'undefined') return;
@@ -24,7 +25,7 @@ function createThemeStore() {
 	}
 
 	// Apply immediately on first load
-	apply(theme);
+	apply(initial);
 
 	function toggle() {
 		theme = theme === 'dark' ? 'light' : 'dark';
