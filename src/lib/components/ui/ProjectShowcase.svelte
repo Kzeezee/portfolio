@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ArrowUpRight } from '@lucide/svelte';
+	import { base } from '$app/paths';
 	import rawProjects from '$lib/content/projects.yaml';
 
 	interface Project {
@@ -77,7 +78,7 @@
 	<div class="bg-secondary relative h-[180px] w-[280px] overflow-hidden rounded-xl">
 		{#each projects as project, index}
 			<img
-				src={project.image}
+				src="{base}{project.image}"
 				alt={project.title}
 				class="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out"
 				style="

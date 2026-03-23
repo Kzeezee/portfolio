@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import AboutContent from '$lib/components/content/AboutContent.svelte';
 	import ContactContent from '$lib/components/content/ContactContent.svelte';
 	import ExperienceContent from '$lib/components/content/ExperienceContent.svelte';
@@ -138,10 +139,10 @@
 
 	function handleFileClick(id: string) {
 		if (id === activeFile) {
-			goto('/');
+			goto(base || '/');
 			return;
 		}
-		goto(`/${id}`);
+		goto(`${base}/${id}`);
 	}
 </script>
 
@@ -202,7 +203,7 @@
 							nodes={FILE_TREE_ROOT}
 							{activeFile}
 							onFileClick={handleFileClick}
-							getFileHref={(id) => `/${id}`}
+							getFileHref={(id) => `${base}/${id}`}
 							autoExpand
 						/>
 					</div>

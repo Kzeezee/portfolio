@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import { base } from '$app/paths';
 	import BadgeAnimatedBorder from '../ui/BadgeAnimatedBorder.svelte';
 	import about from '$lib/content/about.yaml';
 </script>
@@ -13,7 +14,7 @@
 	>
 		<div class="relative h-16 w-16 shrink-0">
 			<img
-				src="/images/profile.webp"
+				src="{base}/images/profile.webp"
 				alt="Profile avatar"
 				class="h-full w-full rounded-xl border border-border/60 object-cover"
 			/>
