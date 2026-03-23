@@ -21,18 +21,18 @@
 
 		<div class="min-w-0 flex-1 space-y-1.5">
 			<p class="font-mono text-xs text-primary">// software engineer &amp; cs student</p>
-			<p class="font-mono text-xs text-muted-foreground">&gt; singapore · smu</p>
+			<p class="font-mono text-xs text-foreground/60">&gt; singapore · smu</p>
 			<div class="flex flex-wrap gap-1.5 pt-0.5">
 				<span
-					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
 					>cs @ smu</span
 				>
 				<span
-					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
 					>software eng</span
 				>
 				<span
-					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
 					>ai focus</span
 				>
 			</div>
@@ -66,7 +66,7 @@
 		<div class="mt-3 space-y-3">
 			{#each about.skills as group, i}
 				<div in:fly={{ x: -12, y: 6, duration: 420, delay: 200 + i * 100, easing: quintOut }}>
-					<p class="mb-1.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+					<p class="mb-1.5 font-mono text-[11px] uppercase tracking-widest text-foreground/60">
 						{group.category}
 					</p>
 					<div class="flex flex-wrap gap-1.5">
