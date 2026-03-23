@@ -269,23 +269,23 @@
 	}
 
 	.content-panel {
-		opacity: 0;
-		pointer-events: none;
-		transform: translateY(1.2rem) scale(0.99);
-		transition:
-			opacity 460ms ease,
-			transform 660ms cubic-bezier(0.22, 1.1, 0.32, 1);
+		animation: content-panel-enter 580ms cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+
+	@keyframes content-panel-enter {
+		from {
+			opacity: 0;
+			transform: translateY(1.5rem) scale(0.99);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
 	}
 
 	.intro-layout.has-selection .intro-panel {
 		align-items: flex-start;
 		text-align: left;
-	}
-
-	.intro-layout.has-selection .content-panel {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translateY(0) scale(1);
 	}
 
 	@media (min-width: 920px) {
