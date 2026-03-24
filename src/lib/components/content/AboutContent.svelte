@@ -24,18 +24,12 @@
 			<p class="font-mono text-xs text-primary">// software engineer &amp; cs student</p>
 			<p class="font-mono text-xs text-foreground/60">&gt; singapore · smu</p>
 			<div class="flex flex-wrap gap-1.5 pt-0.5">
-				<span
-					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
-					>cs @ smu</span
-				>
-				<span
-					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
-					>software eng</span
-				>
-				<span
-					class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
-					>ai focus</span
-				>
+				{#each about.focuses as focus}
+					<span
+						class="rounded-sm border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px] text-foreground/75"
+						>{focus}</span
+					>
+				{/each}
 			</div>
 		</div>
 	</div>

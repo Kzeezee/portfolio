@@ -13,6 +13,11 @@ skills:
   - category: 'Infrastructure'
     items: ['AWS', 'Docker', 'Linux', 'Git']
 
+focuses:
+  - 'full stack'
+  - 'ai/ml'
+  - 'systems & infra'
+
 interests:
   - label: 'Tech rabbit holes'
     icon: 'terminal'
