@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/logo.svg';
 	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';
 	// importing initialises the store and applies the class on the client
 	import '$lib/stores/theme.svelte';
