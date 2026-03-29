@@ -16,7 +16,7 @@
 	<meta property="og:title" content="Oliver Goh | Portfolio" />
 	<meta
 		property="og:description"
-		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building"
+		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building."
 	/>
 	<meta property="og:url" content="https://kzeezee.github.io/portfolio" />
 	<meta property="og:type" content="website" />
@@ -29,7 +29,7 @@
 	<meta name="twitter:title" content="Oliver Goh | Portfolio" />
 	<meta
 		name="twitter:description"
-		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building"
+		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building."
 	/>
 	<meta name="twitter:image" content="https://kzeezee.github.io/portfolio/images/profile.webp" />
 
