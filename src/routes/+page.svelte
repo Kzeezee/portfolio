@@ -6,7 +6,7 @@
 	<title>Oliver Goh | Portfolio</title>
 	<meta
 		name="description"
-		content="Oliver Goh — CS student at SMU and software engineer. Building polished product interfaces and frontend systems."
+		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building."
 	/>
 
 	<!-- Canonical -->
@@ -16,7 +16,7 @@
 	<meta property="og:title" content="Oliver Goh | Portfolio" />
 	<meta
 		property="og:description"
-		content="Oliver Goh — CS student at SMU and software engineer. Building polished product interfaces and frontend systems."
+		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building"
 	/>
 	<meta property="og:url" content="https://kzeezee.github.io/portfolio" />
 	<meta property="og:type" content="website" />
@@ -29,7 +29,7 @@
 	<meta name="twitter:title" content="Oliver Goh | Portfolio" />
 	<meta
 		name="twitter:description"
-		content="Oliver Goh — CS student at SMU and software engineer. Building polished product interfaces and frontend systems."
+		content="Oliver Goh — CS student at SMU and software engineer. Building software worth building"
 	/>
 	<meta name="twitter:image" content="https://kzeezee.github.io/portfolio/images/profile.webp" />
 
@@ -45,7 +45,7 @@
 		alumniOf: { '@type': 'CollegeOrUniversity', name: 'Singapore Management University' },
 		jobTitle: 'Software Engineer',
 		description:
-			'CS student at SMU and software engineer building polished product interfaces and frontend systems.'
+			'CS student at SMU and software engineer building software worth building.'
 	})}<\/script>`}
 </svelte:head>
 
