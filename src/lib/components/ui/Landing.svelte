@@ -233,9 +233,11 @@
 						</h2>
 
 						<ScrollArea class="relative z-10 mt-4 min-h-0 pb-4">
-							{#if ActiveContentComponent}
-								<ActiveContentComponent />
-							{/if}
+							<div class="pr-4">
+								{#if ActiveContentComponent}
+									<ActiveContentComponent />
+								{/if}
+							</div>
 						</ScrollArea>
 						<!-- Bottom Fade Effect overlay -->
 						<!-- <div
