@@ -9,6 +9,7 @@
 	import ExperienceContent from '$lib/components/content/ExperienceContent.svelte';
 	import ProjectsContent from '$lib/components/content/ProjectsContent.svelte';
 	import FileTree from '$lib/components/ui/FileTree.svelte';
+	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import type { FileNode } from '$lib/types/file-tree.types';
 	import lastUpdated from '$lib/content/last_updated.yaml';
 	import { terminalState } from '$lib/stores/terminal.svelte';
@@ -217,7 +218,7 @@
 			{#if activeContent}
 				{#key activeContent.id}
 					<article
-						class="relative flex max-h-[75vh] flex-col rounded-xl border border-border/80 bg-card/60 p-5 shadow-lg backdrop-blur-sm"
+						class="relative grid max-h-[75vh] grid-rows-[auto_auto_1fr] overflow-hidden rounded-xl border border-border/80 bg-card/60 p-5 shadow-lg backdrop-blur-sm"
 						in:fly={{
 							y: animateRouteContent ? 24 : 0,
 							duration: animateRouteContent ? 520 : 0,
@@ -231,11 +232,11 @@
 							{activeContent.title}
 						</h2>
 
-						<div class="styled-scrollbar relative z-10 mt-4 min-h-0 overflow-y-auto pr-2 pb-4">
+						<ScrollArea class="relative z-10 mt-4 min-h-0 pb-4">
 							{#if ActiveContentComponent}
 								<ActiveContentComponent />
 							{/if}
-						</div>
+						</ScrollArea>
 						<!-- Bottom Fade Effect overlay -->
 						<!-- <div
 							class="pointer-events-none absolute right-7 bottom-5 left-5 z-20 h-12 bg-gradient-to-t from-background/90 to-transparent"
