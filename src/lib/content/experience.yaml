@@ -1,14 +1,14 @@
-- role: 'AI Software Engineer'
-  company: 'MikoMiko.ai'
-  period: 'Dec 2025 - Present'
-  description: 'Architecting a GenAI SaaS platform for real-time image generation and community interaction using Next.js and diffusion models.'
-  tech: ['Next.js', 'Firebase', 'Python', 'Diffusion Models', 'ETL']
-
 - role: 'Technology & GDG Director'
   company: 'Singapore Management University'
   period: 'Sep 2025 - Present'
   description: 'Leading technical workshops and developing internal software tools to grow the campus developer community.'
   tech: ['Leadership', 'Community Building', 'Public Speaking', 'Software Architecture']
+
+- role: 'AI Software Engineer'
+  company: 'MikoMiko.ai'
+  period: 'Dec 2025 - Apr 2026'
+  description: 'Architecting a GenAI SaaS platform for real-time image generation and community interaction using Next.js and diffusion models.'
+  tech: ['Next.js', 'Firebase', 'Python', 'Diffusion Models', 'ETL']
 
 - role: 'Full Stack Developer'
   company: 'mathilda'
