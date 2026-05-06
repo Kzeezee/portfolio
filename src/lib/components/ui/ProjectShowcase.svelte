@@ -14,6 +14,7 @@
 	const projects = rawProjects as Project[];
 
 	let hoveredIndex = $state<number | null>(null);
+	let titleHoveredIndex = $state<number | null>(null);
 	let mousePosition = $state({ x: 0, y: 0 });
 	let smoothPosition = $state({ x: 0, y: 0 });
 	let isVisible = $state(false);
@@ -53,11 +54,21 @@
 
 	function handleMouseEnter(index: number) {
 		hoveredIndex = index;
-		isVisible = true;
 	}
 
 	function handleMouseLeave() {
 		hoveredIndex = null;
+		titleHoveredIndex = null;
+		isVisible = false;
+	}
+
+	function handleTitleMouseEnter(index: number) {
+		titleHoveredIndex = index;
+		isVisible = true;
+	}
+
+	function handleTitleMouseLeave() {
+		titleHoveredIndex = null;
 		isVisible = false;
 	}
 </script>
@@ -82,9 +93,9 @@
 				alt={project.title}
 				class="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out"
 				style="
-          opacity: {hoveredIndex === index ? 1 : 0};
-          scale: {hoveredIndex === index ? 1 : 1.1};
-          filter: {hoveredIndex === index ? 'none' : 'blur(10px)'};
+          opacity: {titleHoveredIndex === index ? 1 : 0};
+          scale: {titleHoveredIndex === index ? 1 : 1.1};
+          filter: {titleHoveredIndex === index ? 'none' : 'blur(10px)'};
         "
 			/>
 		{/each}
@@ -120,14 +131,18 @@
 					<div class="relative flex items-start justify-between gap-4">
 						<div class="min-w-0 flex-1">
 							<div class="inline-flex items-center gap-2">
-								<h3 class="text-foreground text-lg font-medium tracking-tight">
+								<h3
+								class="text-foreground text-lg font-medium tracking-tight"
+								onmouseenter={() => handleTitleMouseEnter(index)}
+								onmouseleave={handleTitleMouseLeave}
+							>
 									<span class="relative">
 										{project.title}
 										<span
 											class="
                         bg-foreground absolute -bottom-0.5 left-0 h-px
                         transition-all duration-300 ease-out
-                        {hoveredIndex === index ? 'w-full' : 'w-0'}
+                        {titleHoveredIndex === index ? 'w-full' : 'w-0'}
                       "
 										></span>
 									</span>
