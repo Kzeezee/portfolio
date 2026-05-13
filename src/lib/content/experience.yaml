@@ -1,3 +1,9 @@
+- role: 'Software Engineer (AI & Predictive Systems)'
+  company: 'Treeva'
+  period: 'May 2026 - Present'
+  description: 'Working on software systems for maintaining renewable power systems.'
+  tech: ['Next.js', 'Go', 'IoT Communication', 'Signal Processing', 'LLM Tooling', 'AWS']
+
 - role: 'Technology & GDG Director'
   company: 'Singapore Management University'
   period: 'Sep 2025 - Present'
