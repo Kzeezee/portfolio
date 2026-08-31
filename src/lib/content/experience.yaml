@@ -1,6 +1,12 @@
+- role: 'Technical Support Engineer'
+  company: 'Cloudflare'
+  period: 'Aug 2026 - Present'
+  description: 'CSUP Developer Platform Team.'
+  tech: ['Cloudflare', 'Jira', 'Troubleshooting', 'Networking']
+
 - role: 'Software Engineer (AI & Predictive Systems)'
   company: 'Treeva'
-  period: 'May 2026 - Present'
+  period: 'May 2026 - Aug 2026'
   description: 'Working on software systems for maintaining renewable power systems.'
   tech: ['Next.js', 'Go', 'IoT Communication', 'Signal Processing', 'LLM Tooling', 'AWS']
 
