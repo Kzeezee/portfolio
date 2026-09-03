@@ -12,7 +12,9 @@ function kv(args, { quiet = false } = {}) {
 
 export function kvPut(key, value, { expirationTtl } = {}) {
 	const args = ['key', 'put', key, value];
-	if (expirationTtl) args.push('--expiration-ttl', String(Math.max(expirationTtl, 60)));
+	// NB: the CLI flag is `--ttl` (seconds). `expirationTtl` is the Workers
+	// *runtime* KV API name and is not accepted here.
+	if (expirationTtl) args.push('--ttl', String(Math.max(expirationTtl, 60)));
 	kv(args);
 }
 
@@ -32,7 +34,8 @@ export function kvDelete(key) {
 export function listTokenKeys() {
 	const out = kv(['key', 'list', '--prefix', 'tok:'], { quiet: true });
 	try {
-		return JSON.parse(out).map((k) => k.name);
+		// Slice from the first bracket so any wrangler/npm banner lines are ignored.
+		return JSON.parse(out.slice(out.indexOf('['))).map((k) => k.name);
 	} catch {
 		return [];
 	}
