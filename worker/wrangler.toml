@@ -1,0 +1,10 @@
+name = "resume-gate"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Scoped to /r/* ONLY. A pattern of "kzeezee.com/*" would swallow the
+# entire portfolio. Do not widen this.
+routes = [{ pattern = "kzeezee.com/r/*", zone_name = "kzeezee.com" }]
+
+# id is filled in by:  npx wrangler kv namespace create RESUME
+kv_namespaces = [{ binding = "RESUME", id = "4ba96a93905a43f9aa95fc655da27c8c" }]

@@ -1,5 +1,5 @@
 # allow crawling everything by default
 User-agent: *
-Disallow:
+Disallow: /r/
 
-Sitemap: https://kzeezee.github.io/portfolio/sitemap.xml
+Sitemap: https://kzeezee.com/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "name": "resume-gate",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --remote",
+    "deploy": "wrangler deploy",
+    "upload-pdf": "wrangler kv key put pdf:current --path ../resume.pdf --binding RESUME --remote",
+    "mint": "node scripts/mint.mjs",
+    "status": "node scripts/status.mjs",
+    "extend": "node scripts/extend.mjs",
+    "revoke": "node scripts/revoke.mjs",
+    "check-site": "node scripts/check-site.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260831.1",
+    "qrcode": "^1.5.4",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.128.0"
+  }
+}

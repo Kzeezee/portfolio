@@ -12,6 +12,11 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Resume gate — the PDF must NEVER be committed (public repo)
+/resume.pdf
+/worker/out/
+/worker/node_modules/
+
 # Env
 .env
 .env.*
